@@ -79,7 +79,7 @@ Example: '-' for unordered lists or '1.' for ordered lists."
   :group 'tocify-markdown)
 
 (defcustom tocify-markdown-header-toc-start
-  "<!-- tocify-markdown start - Don't edit this section. Run M-x tocify-markdown-refresh-toc -->"
+  "<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->"
   "Beginning delimiter comment."
   :group 'tocify-markdown
   :type 'string)
@@ -91,7 +91,7 @@ Example: '-' for unordered lists or '1.' for ordered lists."
   :type 'string)
 
 (defcustom tocify-markdown-header-toc-end
-  "<!-- tocify-markdown end -->"
+  "<!-- markdown-toc end -->"
   "Ending delimiter comment."
   :group 'tocify-markdown
   :type 'string)

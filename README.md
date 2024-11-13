@@ -6,6 +6,7 @@ tocify-markdown
 <!-- tocify-markdown start - Don't edit this section. Run M-x tocify-markdown-refresh-toc -->
 **Table of Contents**
 
+- [tocify-markdown](#tocify-markdown)
 - [Use](#use)
     - [Create](#create)
     - [User toc manipulation](#user-toc-manipulation)
