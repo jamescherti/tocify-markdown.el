@@ -1,5 +1,5 @@
 {
-  description = "markdown-toc flake";
+  description = "tocify-markdown flake";
 
   inputs = {
     nixpkgs = {
@@ -23,11 +23,11 @@
       (system:
         let lib = nixpkgs.lib;
             pkgs = nixpkgs.legacyPackages.${system};
-            pname = "markdown-toc";
+            pname = "tocify-markdown";
             version = "0.1.5";
         in rec {
           packages."${system}" = {
-            markdown-toc = pkgs.stdenv.mkDerivation {
+            tocify-markdown = pkgs.stdenv.mkDerivation {
               inherit pname version;
               src = ./.;
               buildInputs = with pkgs.emacs.pkgs; [
@@ -50,7 +50,7 @@
 
               meta = {
                 description = "A simple TOC generator for markdown file.";
-                homepage = https://github.com/ardumont/markdown-toc;
+                homepage = https://github.com/ardumont/tocify-markdown;
                 license = lib.licenses.gpl2;
                 maintainers = with lib.maintainers; [ ardumont ];
               };
@@ -59,6 +59,6 @@
 
           devShell = import ./shell.nix { pkgs = pkgs // packages."${system}"; };
 
-          defaultPackage = packages."${system}".markdown-toc;
+          defaultPackage = packages."${system}".tocify-markdown;
         });
 }

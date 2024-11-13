@@ -3,8 +3,8 @@
 
 * DONE 0.1.5 [100%]
   CLOSED: [2020-05-17 Sun 14:32]
-- [X] Provide a markdown-toc minor mode
-- [X] Follow link in toc: M-x markdown-toc-follow-toc-link-at-point
+- [X] Provide a tocify-markdown minor mode
+- [X] Follow link in toc: M-x tocify-markdown-follow-toc-link-at-point
 - [X] Allow user space indentation customization
 * DONE 0.1.4 [100%]
   CLOSED: [2020-05-02 Sat 09:30]
@@ -21,7 +21,7 @@
 
 * DONE 0.1.2 [100%]
 CLOSED: [2016-07-25 Mon 13:55]
-- [X] Make markdown-toc-header-toc-* customizable - Closes #26
+- [X] Make tocify-markdown-header-toc-* customizable - Closes #26
 - [X] Update version
 - [X] Release notes
 
@@ -35,7 +35,7 @@ CLOSED: [2016-02-27 Sat 11:16]
 - [X] Update dependencies (markdown-mode)
 - [X] Update version
 - [X] Add template for issues
-- [X] Add markdown-toc-bug-report command
+- [X] Add tocify-markdown-bug-report command
 - [X] Release notes
 
 * DONE 0.0.9 [100%]
@@ -56,7 +56,7 @@ CLOSED: [2015-07-15 Wed 17:12]
 - [X] Release notes
 * DONE 0.0.7 [100%]
 CLOSED: [2014-12-15 Mon 23:31]
-- [X] Add prefix argument to `markdown-toc/generate-toc' to replace existing TOC at the same location #10
+- [X] Add prefix argument to `tocify-markdown/generate-toc' to replace existing TOC at the same location #10
 - [X] Simplify tests launcher
 - [X] Add itest on toc generation when using modifier  [2/2]
   - [X] Use ert to simplify tests output reading in case of error
@@ -74,7 +74,7 @@ CLOSED: [2014-06-30 Mon 13:10]
 * DONE 0.0.5 [100%]
 CLOSED: [2014-06-13 Fri 17:39]
 - [X] Deploy to Marmalade
-- [X] Use directly markdown-toc, no need to require anything
+- [X] Use directly tocify-markdown, no need to require anything
 - [X] Update documentation about installation procedure (marmalade)
 - [X] Update version
 - [X] Update release notes
@@ -82,7 +82,7 @@ CLOSED: [2014-06-13 Fri 17:39]
 * DONE 0.0.4 [100%]
 CLOSED: [2014-05-25 Sun 18:56]
 - [X] If melpa recipe is accepted, update the README.md about how to install
-- [X] Add COPYING file + licence inside markdown-toc.el
+- [X] Add COPYING file + licence inside tocify-markdown.el
 - [X] Simplify packaging (no need to use tarball nor *-pkg.el file)
 - [X] Upgrade version
 - [X] Release notes
@@ -94,7 +94,7 @@ CLOSED: [2014-05-25 Sun 09:36]
   - [X] Find if a TOC is already present in buffer
   - [X] Remove old TOC
   - [X] Create new one
-- [X] Reference markdown-toc version
+- [X] Reference tocify-markdown version
 - [X] Reference the inspiration from doctoc
 - [X] Upgrade version
 - [X] Release notes
@@ -104,7 +104,7 @@ CLOSED: [2014-05-24 Sat 23:09]
 - [X] Prepare filesystem to deploy to melpa (avoid having tests files with the file to package)
 - [X] Upgrade version + package
 - [X] Release notes
-- [X] Deploy to Melpa -> make recipe + PR to them - https://github.com/ardumont/melpa/blob/add-markdown-toc/recipes/markdown-toc
+- [X] Deploy to Melpa -> make recipe + PR to them - https://github.com/ardumont/melpa/blob/add-tocify-markdown/recipes/tocify-markdown
 
 * DONE 0.0.1 [100%]
 CLOSED: [2014-05-24 Sat 22:58]

@@ -9,7 +9,7 @@ $ make activate
 # Hack
 
 ```
-$ emacs markdown-toc.el
+$ emacs tocify-markdown.el
 ```
 
 # Test

@@ -29,6 +29,6 @@
             (:exclude "*-test.el")
             (:report-file "/tmp/undercover-report.json"))
 
-(require 'markdown-toc)
+(require 'tocify-markdown)
 
 ;;; test-helper.el ends here

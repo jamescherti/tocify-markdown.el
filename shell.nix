@@ -1,14 +1,14 @@
 { pkgs, ... }:
 
-let markdown-toc-emacs = pkgs.emacsWithPackages (epkgs:
+let tocify-markdown-emacs = pkgs.emacsWithPackages (epkgs:
       (with epkgs.melpaStablePackages; [
-        markdown-mode s dash pkgs.markdown-toc
+        markdown-mode s dash pkgs.tocify-markdown
       ])
     );
 in pkgs.stdenv.mkDerivation {
-  name = "markdown-toc";
+  name = "tocify-markdown";
   buildInputs = with pkgs; [
-    markdown-toc-emacs
+    tocify-markdown-emacs
     pkgs.gitAndTools.hub
     cask
   ];

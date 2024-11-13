@@ -1,8 +1,8 @@
 (source melpa)
 
-(package-file "markdown-toc.el")
+(package-file "tocify-markdown.el")
 
-(files "markdown-toc.el"
+(files "tocify-markdown.el"
        "README.md")
 
 (development

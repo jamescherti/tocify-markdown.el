@@ -1,4 +1,4 @@
-MODE_NAME=markdown-toc
+MODE_NAME=tocify-markdown
 VERSION=$$(grep "^;; Version: " $(MODE_NAME).el | cut -f3 -d' ')
 PACKAGE_FOLDER=$(MODE_NAME)-$(VERSION)
 ARCHIVE=$(PACKAGE_FOLDER).tar

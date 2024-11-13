@@ -5,7 +5,7 @@ Thanks in advance.
 
 ## bug?
 
-### M-x markdown-toc-bug-report
+### M-x tocify-markdown-bug-report
 
 Report back the output from that command here.
 (You can quote it with ``` for a better readability).
