@@ -141,8 +141,6 @@ Default to identity function (do nothing)."
   (interactive)
   (message "tocify-markdown version: %s" tocify-markdown--toc-version))
 
-(defalias 'tocify-markdown/version 'tocify-markdown-version)
-
 (defun tocify-markdown--compute-toc-structure-from-level (level menu-index)
   "Given a LEVEL and a MENU-INDEX, compute the toc structure."
   (when menu-index
@@ -269,7 +267,7 @@ the deleted TOC region, effectively replacing it."
 (defun tocify-markdown-generate-toc ()
   "Generate a TOC for markdown file at current point.
 Deletes any previous TOC."
-  (interactive "P")
+  (interactive)
   (save-excursion
     (when (tocify-markdown--toc-already-present-p)
       ;; when toc already present, remove it
@@ -279,8 +277,6 @@ Deletes any previous TOC."
          (funcall tocify-markdown-user-toc-structure-manipulation-fn)
          tocify-markdown--generate-toc
          insert)))
-
-(defalias 'tocify-markdown/generate-toc 'tocify-markdown-generate-toc)
 
 ;;;###autoload
 (defun tocify-markdown-generate-or-refresh-toc ()

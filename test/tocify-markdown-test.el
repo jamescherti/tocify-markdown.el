@@ -412,7 +412,7 @@ For this, you need to install a snippet of code in your emacs configuration file
 #### Git
 #### Tar
 "
-                  (tocify-markdown-generate-toc 'replace-old-toc)))))
+                  (tocify-markdown-generate-toc)))))
 
 (ert-deftest test-tocify-markdown-generate-or-refresh-toc--with-existing-toc ()
   ;; Update an existing TOC
