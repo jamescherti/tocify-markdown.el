@@ -4,14 +4,17 @@
 (require 'mocker)
 
 (ert-deftest test-tocify-markdown-version ()
+  (setq tocify-markdown-indentation-space 4)
   (let ((tocify-markdown--toc-version "0.1.2"))
     (should (equal "tocify-markdown version: 0.1.2" (tocify-markdown-version)))))
 
 (ert-deftest tocify-markdown--symbol ()
+  (setq tocify-markdown-indentation-space 4)
   (should (equal "   "       (tocify-markdown--symbol " " 3)))
   (should (equal "-#--#--#-" (tocify-markdown--symbol "-#-" 3))))
 
 (ert-deftest tocify-markdown--to-link ()
+  (setq tocify-markdown-indentation-space 4)
   (should (equal "[some markdown page~title (foo).](#some-markdown-pagetitle-foo-1)"
                  (tocify-markdown--to-link "some markdown page~title (foo)." 1)))
   (should (equal "[some markdown page~title (foo).](#some-markdown-pagetitle-foo)"
@@ -20,6 +23,7 @@
                  (tocify-markdown--to-link " under_score"))))
 
 (ert-deftest tocify-markdown--to-tocify-markdown ()
+  (setq tocify-markdown-indentation-space 4)
   (should (equal "- [some markdown page title](#some-markdown-page-title)
 - [main title](#main-title)
     - [Sources](#sources)
@@ -52,6 +56,7 @@
                                                   (1 . "heading"))))))
 
 (ert-deftest tocify-markdown--compute-toc-structure-from-level ()
+  (setq tocify-markdown-indentation-space 4)
   (should (equal '((0 . "Sources") (1 . "Marmalade (recommended)") (1 . "Melpa-stable"))
                  (tocify-markdown--compute-toc-structure-from-level
                   0
@@ -67,6 +72,7 @@
                   '("some markdown page title" . 1)))))
 
 (ert-deftest tocify-markdown--compute-toc-structure ()
+  (setq tocify-markdown-indentation-space 4)
   (should (equal
            '((0 . "some markdown page title")
              (0 . "main title")
@@ -97,6 +103,7 @@
                ("heading" . 2079)))))))
 
 (ert-deftest tocify-markdown--compute-full-toc ()
+  (setq tocify-markdown-indentation-space 4)
   (should (equal
            "<!-- tocify-markdown start - Don't edit this section. Run M-x tocify-markdown-refresh-toc -->\n**Table of Contents**\n\nsome-toc\n\n<!-- tocify-markdown end -->\n"
            (tocify-markdown--compute-full-toc "some-toc"))))
@@ -116,6 +123,7 @@ NB-LINES-FORWARD is the number of lines to get back to."
 
 ;; Create a new TOC
 (ert-deftest tocify-markdown-generate-toc--first-toc ()
+  (setq tocify-markdown-indentation-space 4)
   (should (equal "<!-- tocify-markdown start - Don't edit this section. Run M-x tocify-markdown-refresh-toc -->
 **Table of Contents**
 
@@ -166,6 +174,7 @@ For this, you need to install a snippet of code in your emacs configuration file
                   (tocify-markdown-generate-toc)))))
 
 (ert-deftest tocify-markdown-generate-toc--with-duplicate-titles ()
+  (setq tocify-markdown-indentation-space 4)
   (should (equal "<!-- tocify-markdown start - Don't edit this section. Run M-x tocify-markdown-refresh-toc -->
 **Table of Contents**
 
@@ -225,6 +234,7 @@ For this, you need to install a snippet of code in your emacs configuration file
                   (tocify-markdown-generate-toc)))))
 
 (ert-deftest tocify-markdown-generate-toc--with-customs ()
+  (setq tocify-markdown-indentation-space 4)
   (should (equal "<!-- tocify-markdown start -->
 ** foobar **
 
@@ -247,6 +257,7 @@ blahblah.
                     (tocify-markdown-generate-toc))))))
 
 (ert-deftest tocify-markdown-generate-toc--first-toc-with-user-override ()
+  (setq tocify-markdown-indentation-space 4)
   (should (equal "<!-- tocify-markdown start - Don't edit this section. Run M-x tocify-markdown-refresh-toc -->
 **Table of Contents**
 
@@ -294,6 +305,7 @@ For this, you need to install a snippet of code in your emacs configuration file
                     (tocify-markdown-generate-toc))))))
 
 (ert-deftest tocify-markdown-generate-toc--replace-old-toc-if-already-present ()
+  (setq tocify-markdown-indentation-space 4)
   (should (equal "<!-- tocify-markdown start - Don't edit this section. Run M-x tocify-markdown-refresh-toc -->
 **Table of Contents**
 
@@ -352,6 +364,7 @@ For this, you need to install a snippet of code in your emacs configuration file
                   (tocify-markdown-generate-toc)))))
 
 (ert-deftest tocify-markdown-generate-toc--replace-old-toc ()
+  (setq tocify-markdown-indentation-space 4)
   ;; Update an existing TOC
   (should (equal "some foo bar before
 
@@ -415,6 +428,7 @@ For this, you need to install a snippet of code in your emacs configuration file
                   (tocify-markdown-generate-toc)))))
 
 (ert-deftest test-tocify-markdown-generate-or-refresh-toc--with-existing-toc ()
+  (setq tocify-markdown-indentation-space 4)
   ;; Update an existing TOC
   (should (equal "some foo bar before
 
@@ -478,6 +492,7 @@ For this, you need to install a snippet of code in your emacs configuration file
                   (tocify-markdown-generate-or-refresh-toc)))))
 
 (ert-deftest test-tocify-markdown-generate-or-refresh-toc--without-existing-toc ()
+  (setq tocify-markdown-indentation-space 4)
   (should (equal "<!-- tocify-markdown start - Don't edit this section. Run M-x tocify-markdown-refresh-toc -->
 **Table of Contents**
 
@@ -528,6 +543,7 @@ For this, you need to install a snippet of code in your emacs configuration file
                   (tocify-markdown-generate-or-refresh-toc)))))
 
 (ert-deftest test-tocify-markdown--refresh-toc--with-existing-toc ()
+  (setq tocify-markdown-indentation-space 4)
   ;; Update an existing TOC
   (should (equal "some foo bar before
 
@@ -591,6 +607,7 @@ For this, you need to install a snippet of code in your emacs configuration file
                   (tocify-markdown-refresh-toc)))))
 
 (ert-deftest test-tocify-markdown-refresh-toc--without-existing-toc ()
+  (setq tocify-markdown-indentation-space 4)
   (should (equal "To install **org-trello** in your emacs, you need a few steps.
 # something
 ## Sources
@@ -625,6 +642,7 @@ For this, you need to install a snippet of code in your emacs configuration file
                   (tocify-markdown-refresh-toc)))))
 
 (ert-deftest test-tocify-markdown-delete-toc ()
+  (setq tocify-markdown-indentation-space 4)
   (should (equal "To install **org-trello** in your emacs, you need a few steps.
 # Packages
 ## Sources
@@ -668,12 +686,14 @@ For this, you need to install a snippet of code in your emacs configuration file
                   (tocify-markdown-delete-toc)))))
 
 (ert-deftest test-tocify-markdown-log-msg ()
+  (setq tocify-markdown-indentation-space 4)
   (should (string= "tocify-markdown - hello dude"
                    (mocker-let ((message (str &rest args)
                                          ((:input '("tocify-markdown - hello %s" "dude") :output "tocify-markdown - hello dude"))))
                      (tocify-markdown-log-msg '("hello %s" "dude"))))))
 
 (ert-deftest test-tocify-markdown--bug-report ()
+  (setq tocify-markdown-indentation-space 4)
   (should (string=
            "Please:
 - Describe your problem with clarity and conciceness (cf. https://www.gnu.org/software/emacs/manual/html_node/emacs/Understanding-Bug-Reporting.html)
@@ -699,6 +719,7 @@ System information:
                (tocify-markdown--bug-report))))))
 
 (ert-deftest test-tocify-markdown-bug-report ()
+  (setq tocify-markdown-indentation-space 4)
   (should (equal :res
                  (mocker-let ((browse-url (url)
                                           ((:input '("https://github.com/ardumont/tocify-markdown/issues/new")
@@ -716,6 +737,7 @@ System information:
                    (tocify-markdown-bug-report)))))
 
 (ert-deftest tocify-markdown--read-title-out-of-link ()
+  (setq tocify-markdown-indentation-space 4)
   (should (string= "this is the title"
                    (tocify-markdown--read-title-out-of-link "  - [this is the title](#this-is-the-link)   ")))
   (should (string= "another title"
@@ -724,6 +746,7 @@ with multiple line
 should not matter "))))
 
 (ert-deftest tocify-markdown--title-level ()
+  (setq tocify-markdown-indentation-space 4)
   (should (eq 1
               (tocify-markdown--title-level "- [this is the title](#this-is-the-link)")))
   (should (eq 4
@@ -746,6 +769,7 @@ should not matter "))))
   (should-not (tocify-markdown--title-level " - [title](#this-is-the-link)")))
 
 (ert-deftest tocify-markdown-follow-link-at-point()
+  (setq tocify-markdown-indentation-space 4)
   "Follow a correct toc link should follow to the title"
   (should (string= "## Sources"
                    (with-temp-buffer
@@ -764,6 +788,7 @@ should not matter "))))
                      (buffer-substring-no-properties (point-at-bol) (point-at-eol))))))
 
 (ert-deftest tocify-markdown-follow-link-at-point-failures()
+  (setq tocify-markdown-indentation-space 4)
   "Follow a misindented toc link should do nothing"
   (should
    ;; not move

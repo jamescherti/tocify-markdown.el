@@ -38,18 +38,18 @@
 
 ;; - [some markdown page title](#some-markdown-page-title)
 ;; - [main title](#main-title)
-;;     - [Sources](#sources)
-;;         - [Marmalade (recommended)](#marmalade-recommended)
-;;         - [Melpa-stable](#melpa-stable)
-;;         - [Melpa (~snapshot)](#melpa-~snapshot)
-;;     - [Install](#install)
-;;         - [Load org-trello](#load-org-trello)
-;;     - [Alternative](#alternative)
-;;         - [Git](#git)
-;;         - [Tar](#tar)
+;;   - [Sources](#sources)
+;;     - [Marmalade (recommended)](#marmalade-recommended)
+;;     - [Melpa-stable](#melpa-stable)
+;;     - [Melpa (~snapshot)](#melpa-~snapshot)
+;;   - [Install](#install)
+;;     - [Load org-trello](#load-org-trello)
+;;   - [Alternative](#alternative)
+;;     - [Git](#git)
+;;     - [Tar](#tar)
 ;; - [another title](#another-title)
-;;     - [with](#with)
-;;     - [some](#some)
+;;   - [with](#with)
+;;   - [some](#some)
 ;; - [heading](#heading)
 ;;
 ;; <!-- tocify-markdown end -->
@@ -94,7 +94,7 @@ Example: '-' for unordered lists or '1.' for ordered lists."
   :group 'tocify-markdown
   :type 'string)
 
-(defcustom tocify-markdown-indentation-space 4
+(defcustom tocify-markdown-indentation-space 2
   "Let the user decide the indentation level."
   :group 'tocify-markdown
   :type 'integer)
