@@ -63,8 +63,6 @@
 (require 'markdown-mode)
 (require 'find-func) ; find-library-name
 
-(defconst tocify-markdown--toc-version "0.1.5" "Current version installed.")
-
 (defgroup tocify-markdown nil
   "A simple TOC generator for markdown file."
   :group 'markdown)
@@ -134,12 +132,6 @@ Default to identity function (do nothing)."
 (defun tocify-markdown-log-msg (args)
   "Log message ARGS."
   (apply #'message (format "tocify-markdown - %s" (car args)) (cdr args)))
-
-;;;###autoload
-(defun tocify-markdown-version ()
-  "Markdown-toc version."
-  (interactive)
-  (message "tocify-markdown version: %s" tocify-markdown--toc-version))
 
 (defun tocify-markdown--compute-toc-structure-from-level (level menu-index)
   "Given a LEVEL and a MENU-INDEX, compute the toc structure."
@@ -358,7 +350,7 @@ Commands:
 \\{tocify-markdown-mode-map}"
 
   :init-value nil
-  :lighter " mt"
+  :lighter " TM"
   :group 'tocify-markdown
   :keymap tocify-markdown-mode-map)
 
