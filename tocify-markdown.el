@@ -341,32 +341,6 @@ or if not on a toc link, this does nothing."
           (search-forward-regexp (format "%s %s" (s-repeat level "#") title)))
       (message "tocify-markdown: Not on a link (or misindented), nothing to do"))))
 
-(defun tocify-markdown--bug-report ()
-  "Compute the bug report for the user to include."
-  (require 'find-func)
-  (->> `("Please:"
-         "- Describe your problem with clarity and conciceness (cf. https://www.gnu.org/software/emacs/manual/html_node/emacs/Understanding-Bug-Reporting.html)"
-         "- Explicit your installation choice (melpa, marmalade, el-get, tarball, git clone...)."
-         "- Report the following message trace inside your issue."
-         ""
-         "System information:"
-         ,(format "- system-type: %s" system-type)
-         ,(format "- locale-coding-system: %s" locale-coding-system)
-         ,(format "- emacs-version: %s" (emacs-version))
-         ,(format "- markdown-mode path: %s" (find-library-name "markdown-mode"))
-         ,(format "- tocify-markdown version: %s" tocify-markdown--toc-version)
-         ,(format "- tocify-markdown path: %s" (find-library-name "tocify-markdown")))
-       (s-join "\n")))
-
-(defun tocify-markdown-bug-report (&optional open-url)
-  "Display a bug report message.
-When OPEN-URL is filled, with universal argument (`C-u') is used,
-opens new issue in tocify-markdown's github tracker."
-  (interactive "P")
-  (when open-url
-    (browse-url "https://github.com/ardumont/tocify-markdown/issues/new"))
-  (tocify-markdown-log-msg (list (tocify-markdown--bug-report))))
-
 (defvar tocify-markdown-mode-map nil "Default Bindings map for tocify-markdown mode.")
 
 (setq tocify-markdown-mode-map
