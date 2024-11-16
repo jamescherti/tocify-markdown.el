@@ -1,34 +1,9 @@
 tocify-markdown
 ============
 
-[![Build Status](https://travis-ci.com/ardumont/tocify-markdown.png?branch=master)](https://travis-ci.com/ardumont/tocify-markdown) [![Coverage Status](https://coveralls.io/repos/ardumont/tocify-markdown/badge.svg?branch=master&service=github)](https://coveralls.io/github/ardumont/tocify-markdown?branch=master) [![MELPA Stable](http://stable.melpa.org/packages/tocify-markdown-badge.svg)](http://stable.melpa.org/#/tocify-markdown) [![MELPA](http://melpa.org/packages/tocify-markdown-badge.svg)](http://melpa.org/#/tocify-markdown) [![SWH](https://archive.softwareheritage.org/badge/origin/https://github.com/ardumont/tocify-markdown/)](https://archive.softwareheritage.org/browse/origin/?origin_url=https://github.com/ardumont/tocify-markdown)
-
-<!-- tocify-markdown start - Don't edit this section. Run M-x tocify-markdown-refresh-toc -->
-**Table of Contents**
-
-- [tocify-markdown](#tocify-markdown)
-- [Use](#use)
-    - [Create](#create)
-    - [User toc manipulation](#user-toc-manipulation)
-    - [Update](#update)
-    - [Create elsewhere](#create-elsewhere)
-    - [Remove](#remove)
-    - [Customize](#customize)
-    - [Minor mode](#minor-mode)
-- [Install](#install)
-    - [emacs package repository](#emacs-package-repository)
-        - [Setup](#setup)
-            - [melpa stable](#melpa-stable)
-            - [melpa](#melpa)
-        - [Install](#install-1)
-    - [emacs-lisp file](#emacs-lisp-file)
-- [Inspiration](#inspiration)
-
-<!-- tocify-markdown end -->
-
 A simple mode to create TOC in a well-formed markdown file.
 
-Note that the TOC is well-formed if the markdown is (cf. #15).
+(Note that the TOC is well-formed if the markdown is (cf. #15).)
 
 # Use
 
@@ -163,49 +138,6 @@ To (de)activate this in an org file: /M-x tocify-markdown-mode/
 
 You can also use emacs to setup your own bindings.
 
-# Install
+## Links
 
-## emacs package repository
-
-You need to add melpa or melpa-stable package repository before installing it.
-
-### Setup
-
-#### melpa stable
-
-``` lisp
-(require 'package)
-(add-to-list 'package-archives '("melpa-stable" .
-                                 "http://melpa-stable.milkbox.net/packages/"))
-(package-initialize)
-```
-
-Then hit <kbd>M-x eval-buffer</kbd> to evaluate the buffer's contents.
-
-#### melpa
-
-``` lisp
-(require 'package)
-(add-to-list 'package-archives '("melpa" .
-                                 "http://melpa.milkbox.net/packages/"))
-(package-initialize)
-```
-
-Then hit <kbd>M-x eval-buffer</kbd> to evaluate the buffer's contents.
-
-### Install
-
-<kbd>M-x package-install RET tocify-markdown RET</kbd>
-
-## emacs-lisp file
-
-Retrieve the tocify-markdown.el https://github.com/ardumont/tocify-markdown/releases.
-
-Then hit <kbd>M-x package-install-file RET tocify-markdown.el RET</kbd>
-
-# Inspiration
-
-https://github.com/thlorenz/doctoc
-
-The problem I had with doctoc is the installation process.
-I do not want to install the node tools just for this.
+- [tocify-markdown.el @GitHub](https://github.com/jamescherti/tocify-markdown.el)
